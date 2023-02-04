@@ -1,8 +1,11 @@
+import random
+
 x = 1
-print(type(x))
 y = 2.8
-print(type(y))
 z = 1j
+
+print(type(x))
+print(type(y))
 print(type(z))
 
 a = float(x)
@@ -16,3 +19,5 @@ print(type(b))
 c = complex(x)
 print(c)
 print(type(c))
+
+print(random.randrange(1, 10))
