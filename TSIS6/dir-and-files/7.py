@@ -1,0 +1,5 @@
+import os
+with open(r"C:\pp2\pp2-22B030512\TSIS6\dir-and-files\polish-cow.txt" , 'r') as file:
+    data = file.read() 
+with open(r"copy.txt" , 'w') as f:
+    f.write(data)
