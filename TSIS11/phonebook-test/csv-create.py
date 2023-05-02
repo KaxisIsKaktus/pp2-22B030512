@@ -2,9 +2,9 @@ import csv
 
 # Sample data
 data = [
-    ['Johnny', 87770000000],
-    ['Jane', 87770000001],
-    ['Bob', 87770000002]
+    ['Johnny', 'Bell', 87770000000],
+    ['Jane', 'Liam', 87770000001],
+    ['Bob', 'Ross', 87770000002]
 ]
 
 # Open the CSV file in write mode
