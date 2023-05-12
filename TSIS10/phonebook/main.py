@@ -21,15 +21,15 @@ try:
         print(f"Select version: {cursor.fetchone()}")
 
     #create new table
-    '''with connection.cursor() as cursor:
-        cursor.execute(
-            """CREATE TABLE users(
-            id serial PRIMARY KEY,
-            first_name VARCHAR(50) NOT NULL,
-            phone_number NUMERIC(11) NOT NULL);"""
-        )
-        print("[INFO] Table was succesfully created")
-    '''
+    # with connection.cursor() as cursor:
+    #     cursor.execute(
+    #         """CREATE TABLE users(
+    #         id serial PRIMARY KEY,
+    #         first_name VARCHAR(50) NOT NULL,
+    #         phone_number NUMERIC(11) NOT NULL);"""
+    #     )
+    #     print("[INFO] Table was succesfully created")
+    
     
     #insert data into table
     '''with connection.cursor() as cursor:
@@ -40,51 +40,51 @@ try:
     '''
 
     #import data form csv 
-    with open('sample.csv', 'r') as f:
-        reader = csv.reader(f)
-        next(reader)  # Skip the header row
+    # with open('sample.csv', 'r') as f:
+    #     reader = csv.reader(f)
+    #     next(reader)  # Skip the header row
 
-        # Iterate over the rows in the CSV file and insert them into the database
-        with connection.cursor() as cursor:
-            for row in reader:
-                cursor.execute(
-                    "INSERT INTO users (first_name, phone_number) VALUES (%s, %s)",
-                    (row[0], row[1])
-                )
-            print("[INFO] Data from csv file succesfully inserted")
+    #     # Iterate over the rows in the CSV file and insert them into the database
+    #     with connection.cursor() as cursor:
+    #         for row in reader:
+    #             cursor.execute(
+    #                 "INSERT INTO users (first_name, phone_number) VALUES (%s, %s)",
+    #                 (row[0], row[1])
+    #             )
+    #         print("[INFO] Data from csv file succesfully inserted")
     
     #updating information
-    '''with connection.cursor() as cursor:
-        cursor.execute(
-            """UPDATE users SET first_name = 'Jonathan' WHERE id = 1;"""
-        )
-        print("[INFO] Data succesfully updated")
-    '''
+    # with connection.cursor() as cursor:
+    #     cursor.execute(
+    #         """UPDATE users SET first_name = 'Jonathan' WHERE id = 1;"""
+    #     )
+    #     print("[INFO] Data succesfully updated")
+    
 
     #get data from table 
-    '''with connection.cursor() as cursor:
-        cursor.execute(
-            """SELECT first_name, phone_number FROM users WHERE id = 2;"""
-        )
-        print(cursor.fetchone())
-    '''
+    # with connection.cursor() as cursor:
+    #     cursor.execute(
+    #         """SELECT first_name, phone_number FROM users WHERE id = 2;"""
+    #     )
+    #     print(cursor.fetchone())
+    
     
 
     #delete data from table
-    '''with connection.cursor() as cursor:
+    with connection.cursor() as cursor:
         cursor.execute(
             """DELETE FROM users WHERE id = 1;"""
         )
         print("[INFO] Data succesfully deleted")
-    '''
+    
 
     #delete whole table
-    '''with connection.cursor() as cursor:
-        cursor.execute(
-            """DROP TABLE users"""
-        )
-        print("[INFO] Table was succesfully deleted")
-    '''
+    # with connection.cursor() as cursor:
+    #     cursor.execute(
+    #         """DROP TABLE users"""
+    #     )
+    #     print("[INFO] Table was succesfully deleted")
+    
 
 except Exception as _ex:
     print("[INFO] Error while working with PostgreSQL", _ex)

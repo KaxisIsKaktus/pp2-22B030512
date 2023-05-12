@@ -46,7 +46,7 @@ try:
     '''
 
     #insert data into table 2
-    '''with connection.cursor() as cursor:
+    with connection.cursor() as cursor:
         cursor.execute("SELECT COUNT(*) FROM users2 WHERE first_name = %s;", (name,))
         result = cursor.fetchone()
         
@@ -62,7 +62,7 @@ try:
                 (name, lname, phone)
             )
             print("[INFO] Data succesfully inserted")
-    '''
+    
     
     #import data from csv 
     '''with open('sample.csv', 'r') as f:
@@ -97,12 +97,12 @@ try:
     '''
 
     #get data from table 
-    '''with connection.cursor() as cursor:
+    with connection.cursor() as cursor:
         cursor.execute(
             "SELECT first_name, last_name, phone_number FROM users2 WHERE id = 2;"
         )
         print(cursor.fetchone())
-    '''
+    
     
     #delete data from table
     '''with connection.cursor() as cursor:
